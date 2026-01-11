@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chemie Trainer — MVP</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Chemie Trainer MVP — Redox Balancer, Elektronenkonfiguration, Stoichiometrie, Druckfreundlich" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1>🧪 Chemie Trainer — MVP</h1>
+      <p class="lead">Production-ready static MVP. Algebraic balancer, formula parser, electron configuration, stoichiometry helpers.</p>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section aria-labelledby="balancer-title" class="card" id="balancer">
+      <h2 id="balancer-title">Redox / Equation Balancer</h2>
+      <label for="eqInput">Gleichung (z. B. <code>Zn + Cu2+ -> Zn2+ + Cu</code>)</label>
+      <input id="eqInput" placeholder="Zn + Cu2+ -> Zn2+ + Cu" aria-label="Gleichung"/>
+      <div class="row">
+        <button id="balanceBtn">Balance</button>
+        <button id="balanceClear">Clear</button>
+        <button id="exportEq">Export JSON</button>
+      </div>
+      <pre id="eqOutput" class="output" aria-live="polite"></pre>
+    </section>
+
+    <section aria-labelledby="electron-title" class="card" id="electron">
+      <h2 id="electron-title">Elektronenkonfiguration</h2>
+      <label for="elInput">Elementsymbol (z. B. <code>Fe</code>)</label>
+      <input id="elInput" placeholder="Fe" aria-label="Elementsymbol"/>
+      <div class="row">
+        <button id="elBtn">Berechnen</button>
+        <button id="elClear">Clear</button>
+      </div>
+      <pre id="elOutput" class="output" aria-live="polite"></pre>
+    </section>
+
+    <section aria-labelledby="stoich-title" class="card" id="stoich">
+      <h2 id="stoich-title">Stöchiometrie / Molrechner</h2>
+      <label for="formulaInput">Formel (z. B. <code>H2O</code>)</label>
+      <input id="formulaInput" placeholder="H2O" />
+      <div class="row">
+        <input id="massInput" placeholder="Masse (g) — optional" style="width:40%"/>
+        <button id="molCalc">→ mol / g</button>
+      </div>
+      <pre id="stoichOutput" class="output" aria-live="polite"></pre>
+    </section>
+
+    <section class="card small">
+      <h3>Quick dev</h3>
+      <p>RunDevTests: <button id="runTests">Run Dev Tests</button></p>
+      <pre id="testOutput" class="output small" aria-live="polite"></pre>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <small>Local-only analytics by default • No external tracking • Ready for Vercel static hosting</small>
+    </div>
+  </footer>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.storage.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/balancer.js"></script>
+  <script src="js/electronConfig.js"></script>
+  <script src="js/stoichiometry.js"></script>
+  <script src="js/devtests.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
