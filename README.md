@@ -26,15 +26,6 @@ Dieses Repository enthält ein **production-ready static MVP** für a chemistry 
 3. Choose **Other** (static). Root: `/`.
 4. Deploy — Vercel will publish the static site.
 
-## Next steps / Production improvements
-- Replace `data.js` with a compressed `data/elements.json` and lazy-load it.
-- Move heavy compute (balancer) into a WebWorker for complex reactions.
-- Add full lesson content (JSON-driven), exercises, hint-mechanic.
-- Add accessibility audit (axe) and remedial suggestions.
-
-## License
-Choose a license (MIT recommended for quick school projects). See LICENSE file.
-
 ## Contact
 If you want, I can:
 - Expand element DB to 1..118,
